@@ -27,9 +27,9 @@ class TempConCryoCon(TempCon):
     Cryogenic Control Systems Model 24 temperature control class.
     """
 
-    def __init__(self, obj_id="tempcon", obj_name="Tempcon"):
+    def __init__(self, obj_id="tempcon", name="TempCon"):
 
-        super().__init__(obj_id, obj_name)
+        super().__init__(obj_id, name)
 
         self.host = ""
         self.port = 5000
@@ -80,11 +80,11 @@ class TempConCryoCon(TempCon):
     ):
         """
         Set control temperature in Celsius.
-
-        :param temperature: temperature to set
-        :param temperature_id: temperature ID number
-          * 0 is TempA
-          * 1 is TempB
+        Args:
+            temperature: temperature to set
+            temperature_id: temperature ID number
+                * 0 is TempA
+                * 1 is TempB
         """
 
         if temperature is None:
@@ -109,8 +109,10 @@ class TempConCryoCon(TempCon):
     def get_temperature(self, temperature_id: int = 0):
         """
         Reads temperatures from the tempcon controller.
-
-        :param temperature_id: temperature ID number
+        Args:
+            temperature_id: temperature ID number
+        Returns:
+            temperature: temperature read
         """
 
         if not self.enabled:
@@ -147,6 +149,8 @@ class TempConCryoCon(TempCon):
         """
         Return temperatures in degrees C from temperature controller.
         CAMTEMP, DEWTEMP are first.
+        Returns:
+            temperatures: list of temperatures read
         """
 
         temp0 = self.get_temperature(0)
@@ -202,8 +206,10 @@ class TempconServerInterface(object):
         Communicate with the remote server.
         Sends and command and returns reply.
         Returns the exact reply from the server.
-
-        :param command: command string to send.
+        Args:
+            command: command string to send.
+        Returns:
+            reply: commands reply
         """
 
         # multiple commands may come so wait
