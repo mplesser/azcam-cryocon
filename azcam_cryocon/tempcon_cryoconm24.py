@@ -27,7 +27,7 @@ class TempConCryoCon(TempCon):
     Cryogenic Control Systems Model 24 temperature control class.
     """
 
-    def __init__(self, obj_id="tempcon", name="TempCon"):
+    def __init__(self, obj_id="tempcon", name="tempcon_crycon"):
 
         super().__init__(obj_id, name)
 
@@ -43,7 +43,6 @@ class TempConCryoCon(TempCon):
 
         if self.initialized:
             return
-
         if not self.enabled:
             azcam.AzcamWarning(f"{self.name} is not enabled")
             return
@@ -75,9 +74,7 @@ class TempConCryoCon(TempCon):
 
         return
 
-    def set_control_temperature(
-        self, temperature: float = None, temperature_id: int = 0
-    ):
+    def set_control_temperature(self, temperature: float = None, temperature_id: int = 0):
         """
         Set control temperature in Celsius.
         Args:
