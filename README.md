@@ -4,7 +4,7 @@
 
 ## Installation
 
-`pip install azam-cryocon`
+`pip install azcam-cryocon`
 
 Or download from github: https://github.com/mplesser/azcam-cryocon.git.
 
