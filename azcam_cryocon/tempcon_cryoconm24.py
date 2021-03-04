@@ -142,24 +142,6 @@ class TempConCryoCon(TempCon):
 
         return temp
 
-    def get_temperatures(self):
-        """
-        Return temperatures in degrees C from temperature controller.
-        CAMTEMP, DEWTEMP are first.
-        Returns:
-            temperatures: list of temperatures read
-        """
-
-        temp0 = self.get_temperature(0)
-        temp1 = self.get_temperature(1)
-        temp2 = self.get_temperature(2)
-        temp3 = self.get_temperature(3)
-
-        if self.log_temps:
-            azcam.log(f"templog: {temp0} {temp1} {temp2} {temp3}", logconsole=0)
-
-        return [temp0, temp1, temp2, temp3]
-
 
 class TempconServerInterface(object):
     """
