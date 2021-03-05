@@ -34,6 +34,8 @@ class TempConCryoCon(TempCon):
         self.host = ""
         self.port = 5000
 
+        self.temperature_ids = [0, 1]  # camtemp, dewtemp
+
         self.init_commands = []
 
     def initialize(self):
