@@ -14,7 +14,7 @@ The code below is for example only.
 
 ### Temperature Controller
     tempcon = TempConCryoCon()
-    tempcon.name = "cryoconqb"
+    tempcon.description = "cryoconqb"
     tempcon.host = "10.0.0.44"
     tempcon.control_temperature = -100.0
     tempcon.init_commands = [

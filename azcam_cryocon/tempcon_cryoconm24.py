@@ -27,9 +27,9 @@ class TempConCryoCon(TempCon):
     Cryogenic Control Systems Model 24 temperature control class.
     """
 
-    def __init__(self, obj_id="tempcon", name="tempcon_crycon"):
+    def __init__(self, obj_id="tempcon", description="CryoCon tempcon"):
 
-        super().__init__(obj_id, name)
+        super().__init__(obj_id, description)
 
         self.host = ""
         self.port = 5000
@@ -46,11 +46,11 @@ class TempConCryoCon(TempCon):
         if self.initialized:
             return
         if not self.enabled:
-            azcam.AzcamWarning(f"{self.name} is not enabled")
+            azcam.AzcamWarning(f"{self.description} is not enabled")
             return
 
         # recreate in case host/port changed
-        self.server = TempconServerInterface(self.host, self.port, self.name)
+        self.server = TempconServerInterface(self.host, self.port, self.description)
 
         # query ID
         try:
