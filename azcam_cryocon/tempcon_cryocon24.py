@@ -1,5 +1,5 @@
 """
-Contains the base TempConCryoCon class.
+Contains the base TempConCryoCon24 class.
 """
 
 import socket
@@ -22,7 +22,7 @@ Example commands:
 """
 
 
-class TempConCryoCon(TempCon):
+class TempConCryoCon24(TempCon):
     """
     Cryogenic Control Systems Model 24 temperature control class.
     """
