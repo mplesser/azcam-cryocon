@@ -27,9 +27,9 @@ class TempConCryoCon(TempCon):
     Cryogenic Control Systems Model 24 temperature control class.
     """
 
-    def __init__(self, obj_id="tempcon", description="CryoCon tempcon"):
+    def __init__(self, tool_id="tempcon", description=None):
 
-        super().__init__(obj_id, description)
+        super().__init__(tool_id, description)
 
         self.host = ""
         self.port = 5000
