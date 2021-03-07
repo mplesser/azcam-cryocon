@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="azcam-cryocon",
-    version="21.1.2",
+    version="21.2.0",
     description="azcam extension for Cryo-con temperature controllers",
     long_description=long_description,
     long_description_content_type="text/markdown",
