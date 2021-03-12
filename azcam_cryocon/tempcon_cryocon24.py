@@ -122,6 +122,7 @@ class TempConCryoCon24(TempCon):
             # azcam.AzcamWarning("Tempcon not initialized")
             return -999.9
 
+        temperature_id = int(temperature_id)
         if temperature_id == 0:
             tempstr = "INPUT? A;"
         elif temperature_id == 1:
@@ -131,14 +132,13 @@ class TempConCryoCon24(TempCon):
         elif temperature_id == 3:
             tempstr = "INPUT? D;"
         else:
-            return "ERROR bad TemperatureID in ReadTemperature"
+            raise azcam.AzcamError("bad temperature_id in get_temperature")
 
         reply = self.server.command(tempstr)
         try:
             temp = float(reply)
         except ValueError:
             temp = self.bad_temp_value
-            # raise azcam.AzcamError("Could not convert temperature reading to a number")
 
         temp = self.apply_corrections(temp, temperature_id)
 
