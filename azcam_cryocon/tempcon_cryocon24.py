@@ -38,6 +38,17 @@ class TempConCryoCon24(TempCon):
 
         self.init_commands = []
 
+    def define_keywords(self):
+        """
+        Defines and resets instrument keywords.
+        """
+
+        self.set_keyword("CAMTEMP", 0.0, "Camera temperature", float)
+        self.set_keyword("DEWTEMP", "", "Dewar temperature", float)
+        self.set_keyword("TEMPUNIT", "C", "Temperature units", str)
+
+        return
+
     def initialize(self):
         """
         Initialize CryoConM24TemperatureControl temperature controller.
