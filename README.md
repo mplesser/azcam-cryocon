@@ -15,7 +15,8 @@ The code below is for example only.
 ### Temperature Controller
 
 ```python
-from azcam_cryocon.tempcon_cryocn24 import TempConCryoCon24
+import azcam.server
+from azcam_cryocon.tempcon_cryocon24 import TempConCryoCon24
 tempcon = TempConCryoCon24()
 tempcon.description = "cryoconqb"
 tempcon.host = "10.0.0.44"
