@@ -87,7 +87,9 @@ class TempConCryoCon24(TempCon):
 
         return
 
-    def set_control_temperature(self, temperature: float = None, temperature_id: int = 0):
+    def set_control_temperature(
+        self, temperature: float = None, temperature_id: int = 0
+    ):
         """
         Set control temperature in Celsius.
         Args:
