@@ -6,7 +6,7 @@ import socket
 import time
 
 import azcam
-from azcam.tempcon import TempCon
+from azcam.tools.tempcon import TempCon
 
 """
 Example commands:
